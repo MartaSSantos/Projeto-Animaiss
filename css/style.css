@@ -105,7 +105,7 @@ body {
     grid-column: 2;
 }
 
-.animais-lista li{
+.animais-lista li {
     cursor: pointer;
 }
 
@@ -234,11 +234,11 @@ body {
     }
 }
 
-.js-contet section{
+.js-contet section {
     display: none;
 }
 
-.js-contet section.ativo{
+.js-contet section.ativo {
     display: block !important;
     animation: show .5s forwards;
 }
@@ -246,11 +246,44 @@ body {
 
 @keyframes show {
     from {
-      opacity: 0;
-      transform: translate3d(-30px, 0, 0);
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
     }
+
     to {
-      opacity: 1;
-      transform: translate3d(0px, 0, 0);
+        opacity: 1;
+        transform: translate3d(0px, 0, 0);
     }
-  }
+}
+
+.js-accordion dd {
+    display: none;
+}
+
+.js-accordion dt::after {
+    content: '⇣';
+    margin-left: 10px;
+}
+
+.js-accordion dt.ativo::after {
+    content: '⇡';
+
+}
+
+.js-accordion dd.ativo {
+    display: block;
+    animation: slideDown .5s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    to {
+        max-height: 200px;
+        opacity: 1;
+    }
+
+}
